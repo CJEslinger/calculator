@@ -18,8 +18,26 @@
     border-radius: 8px;
     box-sizing: border-box;
     background-color: #607d5e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px 8px 4px 8px;
+    
 }
 
+#calc-display p{
+    margin: 0;
+    color: black;
+    font-size: 24px;
+}
+
+#calc-display #current-calculation {
+    align-self: flex-end;
+}
+
+#calc-display #prev-calculation {
+    align-self: flex-start;
+}
 
 .row-container {
     flex: 3 1 0%;
@@ -37,11 +55,20 @@
 
 .button {
     background-color: rgb(31, 23, 95);
-    flex-grow: 1;
+    flex: 1 0 0%;
     border: 1px solid gray;
     box-sizing: border-box;
     border-radius: 8px;
     box-shadow: black 1px 1px 0px 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.button span {
 }
 
 
