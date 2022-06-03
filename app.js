@@ -1,5 +1,7 @@
 let currentNum = '';
 let pendingCalc = '';
+let currentOperationLine = [];
+let opperationNumPair = [];
 
 //display
 const currentCalcDisplay = document.querySelector('#current-calculation');
@@ -11,15 +13,15 @@ nums.forEach(num => {num.addEventListener('click', () => (addCurrentNumToDisplay
 
 //operator buttons
 const addButton = document.querySelector('#add');
-      addButton.addEventListener('click', () => {addFunction();})
+      addButton.addEventListener('click', () => {continueOpperationLine(addButton);})
 const subtractButton = document.querySelector('#subtract');
-      subtractButton.addEventListener('click', () => {subtractFunction();})
+      subtractButton.addEventListener('click', () => {continueOpperationLine(subtractButton);})
 const multiplyButton = document.querySelector('#multiply');
-      multiplyButton.addEventListener('click', () => {multiplyFunction();})
+      multiplyButton.addEventListener('click', () => {continueOpperationLine(multiplyButton);})
 const divideButton = document.querySelector('#divide');
-      divideButton.addEventListener('click', () => {divideFunction();})
+      divideButton.addEventListener('click', () => {continueOpperationLine(divideButton);})
 const powerButton = document.querySelector('#power');
-      powerButton.addEventListener('click', () => {powerFunction();})
+      powerButton.addEventListener('click', () => {continueOpperationLine(powerButton);})
 
 //equals button, perens, and decimal
 const equalsButton = document.querySelector('#evaluate');
@@ -32,11 +34,18 @@ function addCurrentNumToDisplay(numButton){
     currentCalcDisplay.textContent = currentNum;
 }
 
-function addFunction() {
+function continueOpperationLine(operator) {
     pendingCalc = currentNum;
     currentNum = '';
     prevCalcDisplay.textContent = pendingCalc;
     currentCalcDisplay.textContent = currentNum;
+    opperationNumPair = [pendingCalc, operator.textContent];
+    currentOperationLine.push(opperationNumPair);
+    console.log(currentOperationLine);
+}
+
+function addFunction() {
+
 }
 
 function subtractFunction() {
