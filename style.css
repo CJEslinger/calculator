@@ -1,0 +1,28 @@
+#calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    border-radius: 16px;
+    width: 400px;
+    height: 600px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    gap: 24px;
+}
+
+#calc-display {
+    border: 2px solid black;
+    flex: 1 1 0%;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+
+.buttons-container {
+    flex: 3 1 0%;
+    border: 2px solid black;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
