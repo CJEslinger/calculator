@@ -11,7 +11,7 @@ const prevCalcDisplay = document.querySelector('#prev-calculation');
 const nums = Array.from(document.querySelectorAll('.numbers'));
 nums.forEach(num => {num.addEventListener('click', () => (addCurrentNumToDisplay(num)))});
 
-//operator buttons
+/*operator buttons
 const addButton = document.querySelector('#add');
       addButton.addEventListener('click', () => {continueOpperationLine(addButton);})
 const subtractButton = document.querySelector('#subtract');
@@ -22,8 +22,13 @@ const divideButton = document.querySelector('#divide');
       divideButton.addEventListener('click', () => {continueOpperationLine(divideButton);})
 const powerButton = document.querySelector('#power');
       powerButton.addEventListener('click', () => {continueOpperationLine(powerButton);})
+*/
 
-//equals button, perens, and decimal
+const operatorButtons = Array.from(document.querySelectorAll('.operators'));
+operatorButtons.forEach(operator => {
+    operator.addEventListener('click', () => continueOpperationLine(operator))
+});
+      //equals button, perens, and decimal
 const equalsButton = document.querySelector('#evaluate');
 const leftPeren = document.querySelector('#left-peren');
 const rightPeren = document.querySelector('#right-peren');
