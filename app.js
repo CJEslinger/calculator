@@ -1,8 +1,9 @@
-let currentNum = ''
+let currentNum = '';
+let pendingCalc = '';
 
 //display
 const currentCalcDisplay = document.querySelector('#current-calculation');
-currentCalcDisplay.textContent = currentNum;
+const prevCalcDisplay = document.querySelector('#prev-calculation');
 
 //number buttons
 const nums = Array.from(document.querySelectorAll('.numbers'));
@@ -26,29 +27,30 @@ const leftPeren = document.querySelector('#left-peren');
 const rightPeren = document.querySelector('#right-peren');
 const decimalButton = document.querySelector('#decimal');
 
-addButton.addEventListener('click', () => {addFunction();})
-
 function addCurrentNumToDisplay(numButton){
     currentNum += (numButton.textContent);
     currentCalcDisplay.textContent = currentNum;
 }
 
 function addFunction() {
-
+    pendingCalc = currentNum;
+    currentNum = '';
+    prevCalcDisplay.textContent = pendingCalc;
+    currentCalcDisplay.textContent = currentNum;
 }
 
 function subtractFunction() {
 
 }
 
-function multiplyButton() {
+function multiplyFunction() {
 
 }
 
-function divideButton() {
+function divideFunction() {
 
 }
 
-function powerButton() {
-    
+function powerFunction() {
+
 }
