@@ -46,7 +46,7 @@ function continueOpperationLine(operator) {
 function evaluate() {
     if (opperationNumPair[1] == '+'){addFunction()}
     if (opperationNumPair[1] == '-'){subtractFunction()}
-    if (opperationNumPair[1] == '*'){multiplyFunction()}
+    if (opperationNumPair[1] == 'x'){multiplyFunction()}
     if (opperationNumPair[1] == '/'){divideFunction()}
     if (opperationNumPair[1] == 'x^'){powerFunction()}
     opperationNumPair.pop()
@@ -83,7 +83,7 @@ function multiplyFunction() {
 function divideFunction() {
     currentNum = parseInt(currentNum);
     pendingCalc = parseInt(pendingCalc);
-    currentNum = pendingCalc * currentNum;
+    currentNum = pendingCalc / currentNum;
     pendingCalc = '';
     currentCalcDisplay.textContent = `${currentNum}`;
     pendingCalcDisplay.textContent = '';
