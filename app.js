@@ -22,6 +22,8 @@ equalsButton.addEventListener('click', evaluate)
 const leftPeren = document.querySelector('#left-peren');
 const rightPeren = document.querySelector('#right-peren');
 const decimalButton = document.querySelector('#decimal');
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click', () => {clearCalculator()})
 
 //backend logic****************************************************
 
@@ -96,5 +98,13 @@ function powerFunction() {
     pendingCalc = '';
     currentCalcDisplay.textContent = `${currentNum}`;
     pendingCalcDisplay.textContent = '';
+}
+
+function clearCalculator() {
+    currentNum = '';
+    pendingCalc = '';
+    currentCalcDisplay.textContent = currentNum
+    pendingCalcDisplay.textContent = pendingCalc;
+    opperationNumPair = [];
 }
 //:)
